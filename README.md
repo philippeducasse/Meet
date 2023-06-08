@@ -4,6 +4,8 @@ This project will create an app which allows users to access different events by
 
 This app will be built using REACT.
 
+Users will be authenticated & authorised using OAuth, in which Google acts as the third party authenticator (users must have a google account to be able to use the app).
+
 
 ## Serverless fucntionality ##
 
