@@ -25,7 +25,7 @@ Scenario 2: User should see a list of suggestions when they search for a city. G
 
 Scenario 3: User can select a city from the suggested list. Given the user was typing “Berlin” in the city textbox And the list of suggested cities is showing When the user selects a city (e.g., “Berlin, Germany”) from the list Then their city should be changed to that city (i.e., “Berlin, Germany”) And the list of suggestions should disappear And the user should receive a list of upcoming events in that city#
 
-Feature 2: Show/hide an event's details
+## Feature 2: Show/hide an event's details
 
 User story
 
@@ -49,7 +49,7 @@ Given: user has expanded an event to show its details
 When: user clicks on expanded event again
 Then: details of the event should be hiden
 
-Feature 3: Specify number of events
+## Feature 3: Specify number of events
 
 User story
 

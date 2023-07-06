@@ -1,8 +1,12 @@
 /*these are the imported packages */
+'use strict';
 
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
+const redirect_uris = [
+  "https://philippeducasse.github.io/meet/"
+];
 
 /* SCOPES allows you to set access levels; this is set to read only for now because you don't have access rights to
 update calendar yourself */
@@ -14,27 +18,27 @@ const SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
  * the value is in the “config.json” file. This is a best practice as it keeps your API secrets hidden. 
  */
 
-const credentials = {
+// const credentials = {
 
-  client_id: process.env.CLIENT_ID,
-  project_id: process.env.PROJECT_ID,
-  client_secret: process.env.CLIENT_SECRET,
-  calendar_id: process.env.CALENDAR_ID,
-  auth_uri: "https://accounts.google.com/o/oauth2/auth",
-  token_uri: "https://oauth2.googleapis.com/token",
-  auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
-  redirect_uris: ["https://philippeducasse.github.io/meet"],
-  javascript_origins: ["https://philippeducasse.github.io", "http://localhost:3000"],
-};
+//   CLIENT_ID: process.env.CLIENT_ID,
+//   project_id: process.env.PROJECT_ID,
+//   CLIENT_SECRET: process.env.CLIENT_SECRET,
+//   CALENDAR_ID: process.env.CALENDAR_ID,
+//   auth_uri: "https://accounts.google.com/o/oauth2/auth",
+//   token_uri: "https://oauth2.googleapis.com/token",
+//   auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
+//   redirect_uris: ["https://philippeducasse.github.io/meet"],
+//   javascript_origins: ["https://philippeducasse.github.io", "http://localhost:3000"],
+// };
 
 /*  this next line DESTRUCTURES the credentials */
-
-const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
+const { CLIENT_SECRET, CLIENT_ID, CALENDAR_ID } = process.env;
 
 /** a new instance of oAUth2 is called and created, accepts the credentials as parameters*/
 const oAuth2Client = new google.auth.OAuth2(
-  client_id,
-  client_secret,
+  
+  CLIENT_ID,
+  CLIENT_SECRET,
   redirect_uris[0]
 );
 
@@ -74,8 +78,8 @@ module.exports.getAuthURL = async () => {
 module.exports.getAccessToken = async (event) => {
   //values to instantiate the OAuthClient are at the top
   const oAuth2Client = new google.auth.OAuth2(
-    client_id,
-    client_secret,
+    CLIENT_ID,
+    CLIENT_SECRET,
     redirect_uris[0]
   );
   // decode authorisation code extracted from getAuthURL function
@@ -117,8 +121,8 @@ module.exports.getAccessToken = async (event) => {
 module.exports.getCalendarEvents = async (event) => {
 
   const oAuth2Client = new google.auth.OAuth2(
-    client_id,
-    client_secret,
+    CLIENT_ID,
+    CLIENT_SECRET,
     redirect_uris[0]
   );
   const access_token = decodeURIComponent(`${event.pathParameters.access_token}`);
@@ -128,9 +132,9 @@ module.exports.getCalendarEvents = async (event) => {
   return new Promise((resolve, reject) => {
     calendar.events.list(
       {
-        calendarId: calendar_id,
+        calendarId: CALENDAR_ID,
         auth: oAuth2Client,
-        timeMin: new Date().toISOString(),
+        timeMin: new Date().toISOString(),  
         singleEvents: true,
         orderBy: "startTime"
       },
