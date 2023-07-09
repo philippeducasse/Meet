@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 const Event = ({ event }) => {
-    const [events, setEvents] = useState([]);
     const [collapsed, setCollapsed] = useState(true);
-
     const handleClick = () => {
         setCollapsed(!collapsed);
     };
@@ -11,7 +9,7 @@ const Event = ({ event }) => {
     const timeZone = event.start && event.start.timeZone;
     return (
         <ul>
-            <li >
+            <li className="event">
                 {collapsed ? (
                     <div>
                         <h3 id="eventSummary">{event.summary}</h3>
@@ -34,7 +32,8 @@ const Event = ({ event }) => {
                         <p className="eventTimeZone">
                             {timeZone}
                         </p>
-                        <p className="eventLink">{event.htmlLink}</p>
+                        <h4>About this Event:</h4>
+                        <a className="eventLink" href = {event.htmlLink} target="_blank">See details on Google Calendar</a>
                         <p id="eventDescription">{event.description}</p>
                         <button onClick ={handleClick} className="hideDetails">Hide Details</button>
                     </div>
