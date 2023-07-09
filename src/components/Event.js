@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 const Event = ({ event }) => {
-    const [events, setEvents] = useState([]);
     const [collapsed, setCollapsed] = useState(true);
-
     const handleClick = () => {
         setCollapsed(!collapsed);
     };
