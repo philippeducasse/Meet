@@ -34,9 +34,9 @@ describe('<Event /> component', () => {
         EventComponent.rerender(<Event event = {allEvents[0]}/>)
         const showDetailsButton = EventComponent.queryByRole('button');
         await user.click(showDetailsButton)
-        const eventLink = EventComponent.getByText(allEvents[0].htmlLink)
+        const eventLink = EventComponent.getByRole('link')
         const eventDescription = EventComponent.getByText(allEvents[0].description)
-        expect(eventLink.textContent).toBe('https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA1MTlUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20');
+        expect(eventLink).toHaveAttribute('href','https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA1MTlUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20');
         expect(eventDescription.textContent).toBe('Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) Javascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.')
     });
     test('expanded elements have a hide details button', async () => {
