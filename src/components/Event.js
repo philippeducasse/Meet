@@ -8,7 +8,7 @@ const Event = ({ event }) => {
     const startTime = event.start && event.start.dateTime;
     const timeZone = event.start && event.start.timeZone;
     return (
-        <ul>
+        <ul className="events">
             <li className="event">
                 {collapsed ? (
                     <div>

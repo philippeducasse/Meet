@@ -67,7 +67,7 @@ Given: the user is presented with a list of collapsed events for a city
 When: user selects number of events to be displayed
 Then: number of events displayed will match number selected by the user
 
-Feature 4: Use the app when offline
+## Feature 4: Use the app when offline
 
 As a user, I should be able to see and search for details by city so that I can use some features of the app even when offline
 
