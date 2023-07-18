@@ -35,14 +35,14 @@ const removeQuery = () => {
 }
 
 // if token is invalid or there isn't one
-
-const getToken = async (code) => { 
+const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const response = await fetch(
     'https://atlyh784x9.execute-api.eu-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode
   );
-  const {access_token} = await response.json();
-  access_token && localStorage.setItem('access_token', access_token);
+  const { access_token } = await response.json();
+  access_token && localStorage.setItem("access_token", access_token);
+
   return access_token;
 };
 
@@ -68,7 +68,7 @@ export const getEvents = async () => {
 
 
 export const getAccessToken = async () => {
-  const accessToken = localStorage.getItem('acces_token');
+  const accessToken = localStorage.getItem('access_token');
   const tokenCheck = accessToken && (await checkToken(accessToken));
 
   if (!accessToken || tokenCheck.error){
@@ -76,7 +76,7 @@ export const getAccessToken = async () => {
     const searchParams = new URLSearchParams(window.location.search); //searches for authCode if no token is found
     const code = await searchParams.get('code');
     if (!code) { // if no coed is found redirects to google auth screen
-      const response = await fetch(
+      const response = await fetch(   
         'https://atlyh784x9.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url'
       );
       const result = await response.json();

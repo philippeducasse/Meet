@@ -7,21 +7,21 @@ frameworkVersion: "3"
 
 provider:
   name: aws
-  runtime: nodejs18.x
+  runtime: nodejs12.x
   region: eu-central-1
-  timeout: 60 # optional, in seconds, default is 6
+  timeout: 30 # optional, in seconds, default is 6
 
 # this is to specify the values of the key & secret
-
+ 
   environment:
     CLIENT_ID: ${file(config.json):CLIENT_ID}
     CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
     CALENDAR_ID: ${file(config.json):CALENDAR_ID}
-
 functions:
-  getAuthURL: #one of the three functions created
+  getAuthURL:
     handler: handler.getAuthURL # this points to getAuthURL in the handler.js file. Anytime getAuthURL is called, lambda runs this handler
-    events: # specifies which events will triger the getAuthURL to be invoked
+# specifies which events will triger the getAuthURL to be invoked
+    events:
       - http:
           path: api/get-auth-url
           method: get
@@ -30,7 +30,7 @@ functions:
     handler: handler.getAccessToken
     events:
       - http:
-          path: api/token/{code} # the {code} will contain the URI parameter retrieved from getAuthURL
+          path: api/token/{code}
           method: get
   getCalendarEvents:
     handler: handler.getCalendarEvents

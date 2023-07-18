@@ -116,3 +116,10 @@ input[type="number"] {
 .input-field{
   text-align: center;
 }
+.alerts-container {
+  position: fixed;
+  top: 30px;
+  left: 262px;
+  width: 250px;
+  z-index: 1000;
+}

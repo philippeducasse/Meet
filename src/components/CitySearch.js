@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const CitySearch = ({ allLocations, setCurrentCity }) => {
+const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [query, setQuery] = useState("");
     const [suggestions, setSuggestions] = useState([]);
@@ -12,6 +12,15 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
         }) : [];
         setQuery(value);
         setSuggestions(filteredLocations);
+
+        let infoText;
+        if (filteredLocations.length === 0) {
+            infoText = 'We could not find the city you were looking for. Please try again.'
+        } 
+        else {
+            infoText= ''
+        }
+        setInfoAlert(infoText);
     };
 
     const handleItemClicked = (event) => {
@@ -19,6 +28,7 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
         setQuery(value);
         setCurrentCity(value);
         setShowSuggestions(false); //to hide the list once it is clicked
+        setInfoAlert("");
     }
     // must use this hhook because the allLocation array is fetched asynchronously, can't just initialise the state to allLocations
     useEffect(() => {

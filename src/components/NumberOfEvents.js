@@ -1,14 +1,22 @@
 import React from 'react';
 import { useState } from 'react';
 
-export const NumberOfEvents = ({setCurrentNOE}) => {
+export const NumberOfEvents = ({setCurrentNOE , setErrorAlert}) => {
 
   const [input, setInput] = useState(32)
     
     const handleChange = (event) => {
         const value = event.target.value
         setInput(value)
-        setCurrentNOE(value)
+
+        let errorText;
+        if (isNaN(parseInt(value)) || value <= 0){
+          errorText = 'Please enter a valid number'
+        } else {
+          errorText = '';
+          setCurrentNOE(value)
+        }
+        setErrorAlert(errorText)
     }
   return (
     <div id="numberOfEvents">

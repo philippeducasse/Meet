@@ -9,7 +9,7 @@ import App from '../App';
 describe('<CitySearch /> component', () => {
     let CitySearchComponent;
     beforeEach(() => {
-        CitySearchComponent = render(<CitySearch allLocations={[]}/>); // must add dummy prop because allLocations prop is passed down from App and then set to suggestions
+        CitySearchComponent = render(<CitySearch allLocations={[]} setInfoAlert={() => { }}/>); // must add dummy prop because allLocations prop is passed down from App and then set to suggestions
         // if it is undefined it will throw errors
     });
     test('renders text input', () => {
@@ -34,7 +34,7 @@ describe('<CitySearch /> component', () => {
         const user = userEvent.setup();
         const allEvents = await getEvents();
         const allLocations = extractLocations(allEvents);
-        CitySearchComponent.rerender(<CitySearch allLocations={allLocations} />);
+        CitySearchComponent.rerender(<CitySearch allLocations={allLocations} setInfoAlert={() => { }}/>);
         //user types "berlin in city textbox"
         const cityTextBox = CitySearchComponent.queryByRole('textbox');
         await user.type(cityTextBox, 'Berlin');
@@ -54,7 +54,7 @@ describe('<CitySearch /> component', () => {
         const user = userEvent.setup();
         const allEvents = await getEvents();
         const allLocations = extractLocations(allEvents);
-        CitySearchComponent.rerender(<CitySearch allLocations={allLocations} setCurrentCity={() => {}}/>); // dummy function passed here to make setCurrentCity an empty function
+        CitySearchComponent.rerender(<CitySearch allLocations={allLocations} setCurrentCity={() => {}} setInfoAlert={() => { }}/>); // dummy function passed here to make setCurrentCity an empty function
         const cityTextBox = CitySearchComponent.queryByRole('textbox');
         await user.type(cityTextBox, "Berlin");
         // the suggestion's textContent look like this: "Berlin, Germany"
