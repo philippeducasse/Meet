@@ -123,3 +123,22 @@ input[type="number"] {
   width: 250px;
   z-index: 1000;
 }
+.recharts-responsive-container{
+  background-color: #fff;
+  border-radius: 10px;
+  color: black;
+}
+
+.charts-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .charts-container{
+    grid-template-columns: 1fr;
+  }
+  .recharts-responsive-container{
+    margin: 10px;
+  }
+}
