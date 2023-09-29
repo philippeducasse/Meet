@@ -6,7 +6,7 @@ This progressive web app (PWA) was built using react and hosted using AWS server
 
 Users will be authenticated & authorised using OAuth, in which Google acts as the third party authenticator (users must have a google account to be able to use the app).
 
-<img src = "./Screenshot.png">
+<img src = "/Screenshot.png">
 
 ## Technologies used
 
