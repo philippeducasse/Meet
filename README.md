@@ -8,6 +8,8 @@ Users will be authenticated & authorised using OAuth, in which Google acts as th
 
 <img src = "/Screenshot.png">
 
+ <a>https://philippeducasse.github.io/meet/</a>
+
 ## Technologies used
 
 -   React
