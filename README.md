@@ -1,10 +1,34 @@
 # Meet App #
 
-This project will create an app which allows users to access different events by cities. Users will be able to filter through different cities and browse through the events happening there. Users will be able to click on specific events of interest from a list in order to show or hide the details of each event. 
+This app allows users to access different events by cities. Users will be able to filter through different cities and browse through the events happening there. Users will be able to click on specific events of interest from a list in order to show or hide the details of each event. 
 
-This app will be built using REACT.
+This progressive web app (PWA) was built using react and hosted using AWS serverlesss functionality. It was built implementing a Test Driven Development (TDD) approach
 
 Users will be authenticated & authorised using OAuth, in which Google acts as the third party authenticator (users must have a google account to be able to use the app).
+
+<img src = "./Screenshot.png">
+
+## Technologies used
+
+-   React
+
+-   SCSS
+
+-   JavaScript
+
+-   Google Calendar API and OAuth2 authentication
+
+-   Jest testing
+
+-   Lighthouse (PWA checklist providede by Google)
+
+-   AWS Lamba functions
+
+-   React Testing Library
+
+-   Jest (test runner)
+
+-   Recharts (react library for data visualisation)
 
 
 ## Serverless fucntionality ##

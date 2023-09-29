@@ -61,7 +61,7 @@ export const getEvents = async () => {
 
     return events?JSON.parse(events):[];
   }
-  
+
   const token = await getAccessToken();
 
   if (token) {
@@ -88,7 +88,7 @@ export const getAccessToken = async () => {
     await localStorage.removeItem('access_token');
     const searchParams = new URLSearchParams(window.location.search); //searches for authCode if no token is found
     const code = await searchParams.get('code');
-    if (!code) { // if no coed is found redirects to google auth screen
+    if (!code) { // if no code is found redirects to google auth screen
       const response = await fetch(   
         'https://atlyh784x9.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url'
       );
