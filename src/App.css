@@ -25,7 +25,24 @@ h1{
 p {
   margin: 5px 0;
 }
-body{}
+#input-container{
+  display: flex;
+  background-color: #19684a;
+  justify-content: center;
+  align-items: center;
+  border-top: 10px solid #fff;
+}
+#numberOfEvents{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#city-search {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+}
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
@@ -43,14 +60,7 @@ input[type="number"] {
   width: 250px;
 }
 
-#city-search {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  position: relative;
-  background-color: #19684a;
-  width: 100vw
-}
+
 
 .suggestions {
   width: 250px;
