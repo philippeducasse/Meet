@@ -1,9 +1,11 @@
+/* #19684a 
+#199465*/
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
 .App {
   text-align: center;
-  padding: 2% 5%;
-  background-image: linear-gradient(to right, #fff, #5856ee)
+  background-color: white;
 }
 
 .App * {
@@ -14,11 +16,15 @@ ul {
   padding: 0;
   list-style: none;
 }
-
+h1{
+  background-color: #199465;
+  padding: 17px;
+  margin: 0;
+}
 p {
   margin: 5px 0;
 }
-
+body{}
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
@@ -29,7 +35,7 @@ input[type="number"] {
   line-height: 20px;
   align-self: center;
   height: 38px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 .city {
@@ -41,6 +47,8 @@ input[type="number"] {
   flex-direction: column;
   margin: auto;
   position: relative;
+  background-color: #19684a;
+  width: 100vw
 }
 
 .suggestions {
@@ -69,9 +77,15 @@ input[type="number"] {
 .suggestions>li:hover {
   background-color: #bcdcdb;
 }
-
+#event-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .event {
-  padding: 10px 30px 35px;
+  padding: 10px 30px ;
   margin: 10px auto;
   text-align: left;
   border: 1px solid #ccc;
@@ -127,11 +141,18 @@ input[type="number"] {
   background-color: #fff;
   border-radius: 10px;
   color: black;
+  border: 3px solid #19684a;
 }
 
 .charts-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  margin: 3% 5%;
+  background-color: #19684a;
+  padding: 50px;
+  border-radius: 10px;
+  border: 50px solid #199465;
 }
 
 @media (max-width: 768px) {
