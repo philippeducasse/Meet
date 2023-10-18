@@ -18,19 +18,23 @@ ul {
   list-style: none;
 }
 h1{
-  background-color: #199465;
-  padding: 17px;
-  margin: 0;
+  /* margin-right: 100px; */
+  color: #19684a;
 }
 p {
   margin: 5px 0;
 }
+h5{
+  margin-right: 10px;
+  color: #19684a;
+}
 #input-container{
   display: flex;
-  background-color: #19684a;
-  justify-content: center;
+  background-color:#dff0ea;
+  justify-content: space-evenly;
   align-items: center;
   border-top: 10px solid #fff;
+  padding: 0 5%;
 }
 #numberOfEvents{
   display: flex;
@@ -48,7 +52,7 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 3px solid #19684a;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -90,16 +94,20 @@ input[type="number"] {
 }
 #event-list{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #dff0ea;
+  padding: 40px 0;
+  margin: 0 5%;
+  border-radius: 10px;
 }
 .event {
   padding: 10px 30px ;
   margin: 10px auto;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 5px solid #19684a;
   border-radius: 4px;
   position: relative;
   width: 75%;
@@ -107,29 +115,27 @@ input[type="number"] {
 }
 
 .showDetails {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
+  display: flex;
   padding: 5px 8px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  margin: 5px;
-  background-color: #d0cff1;
+  margin: 20px auto;
+  background-color: #19684a;
+  color:#bcdcdb;
   border: none;
 }
 
 .hideDetails {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
+  display: flex;
   padding: 5px 8px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  margin: 15px 5px 5px;
+  margin: 20px auto;
   border: none;
-  background-color: #d0cff1;
+  background-color: #19684a;
+  color:#bcdcdb;
   display:block;
   
 }
@@ -159,11 +165,10 @@ input[type="number"] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
-  margin: 3% 5%;
+  margin: 5%;
   background-color: #19684a;
   padding: 50px;
   border-radius: 10px;
-  border: 50px solid #199465;
 }
 
 @media (max-width: 768px) {
@@ -172,5 +177,16 @@ input[type="number"] {
   }
   .recharts-responsive-container{
     margin: 10px;
+  }
+  #input-container{
+    flex-direction: column;
+  }
+  #numberOfEvents{
+    display: flex;
+    flex-direction: column;
+  }
+  h5{
+    margin-bottom: 0;
+
   }
 }

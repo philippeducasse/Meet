@@ -21,7 +21,7 @@ const App = () => {
   const fetchData = async () => {
     const allEvents = await getEvents();
     const filteredEvents = currentCity == 'See all cities' ? // putting strict equality here makes the test fail
-      allEvents : 
+      allEvents :
       allEvents.filter(event => event.location === currentCity);
     setEvents(filteredEvents.slice(0, currentNOE));
     setAllLocations(extractLocations(allEvents));
@@ -41,19 +41,20 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Meet App</h1>
+
       <div className="alerts-container">
-        {infoAlert.length ? <InfoAlert text = {infoAlert} /> : null}
-        {errorAlert.length ? <ErrorAlert text = {errorAlert} /> : null}
-        {warningAlert.length ? <WarningAlert text = {warningAlert} /> : null}
+        {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
+        {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
       <div id="input-container">
-      <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert}/>
-      <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
+        <h1>Meet App</h1>
+        <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} />
+        <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
       </div>
       <div className="charts-container">
-          <EventGenreChart events = {events}/>
-          <CityEventsChart allLocations = {allLocations} events = {events}/>
+        <EventGenreChart events={events} />
+        <CityEventsChart allLocations={allLocations} events={events} />
       </div>
       <EventList events={events} />
     </div>
