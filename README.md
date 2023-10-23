@@ -32,6 +32,15 @@ Users will be authenticated & authorised using OAuth, in which Google acts as th
 
 -   Recharts (react library for data visualisation)
 
+## How to run the app##
+
+To run the app locally, run
+
+npm start
+
+To deploy the app, run
+
+npm run deploy
 
 ## Serverless fucntionality ##
 

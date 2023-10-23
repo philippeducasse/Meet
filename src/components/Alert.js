@@ -17,8 +17,7 @@ class Alert extends Component {
             borderColor: this.color,
             textAlign: "center",
             fontSize: "12px",
-            margin: "10px 0",
-            padding: "10px"
+            padding: "10px",
         }
     }
 
