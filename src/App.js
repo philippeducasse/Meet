@@ -41,7 +41,14 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="background-container">
+        <div className='background-colour'></div>
+        <div className='circle1'></div>
+        <div className='circle2'></div>
+        <div className='circle3'></div>
+        <div className='circle4'></div>
 
+      </div>
       <div id="input-container">
         <h1>Meet App</h1>
         <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} currentNOE={currentNOE} setCurrentNOE={setCurrentNOE}/>
