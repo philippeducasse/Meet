@@ -22,8 +22,8 @@
 .background-colour{
   top: 10;
   right: 10;
-  width: 10000px;
-  height: 3500px;
+  width: 100vw;
+  min-height: 500vh;
   z-index: -100;
   background-color: #bcdcdb;
 }
@@ -31,7 +31,7 @@
   right: 50px;
   top: 50px;
   background-color: #19684a;
-  width: 350px;
+  width: 35vw;
   height: 350px;
   border-radius: 50%;
   z-index: -1;
@@ -41,7 +41,7 @@
   right: 50px;
   top: 1050px;
   background-color: #4bbe92;
-  width: 650px;
+  width: 65vw;
   height: 850px;
   border-radius: 50%;
   z-index: -1;
@@ -51,7 +51,7 @@
   left: 50px;
   top: 250px;
   background-color: #66c8e9;
-  width: 550px;
+  width: 55vw;
   height: 550px;
   border-radius: 50%;
   z-index: -1;
@@ -92,6 +92,7 @@ h5{
   display: flex;
   background-color:#dff0ea;
   justify-content: space-evenly;
+  flex: 1;
   align-items: center;
   border-top: 10px solid #fff;
   padding: 0 5%;
@@ -103,6 +104,7 @@ h5{
   justify-content: center;
   align-items: center;
 }
+
 #city-search {
   display: flex;
   flex-direction: column;
@@ -231,23 +233,44 @@ input[type="number"] {
   margin: 5%;
   border-radius: 10px;
 }
-
-@media (max-width: 768px) {
-  .charts-container{
+@media (max-width: 500px) {
+  #event-list {
     grid-template-columns: 1fr;
   }
-  .recharts-responsive-container{
-    margin: 10px;
+  .charts-container {
+    grid-template-columns: 1fr;
   }
-  #input-container{
+  #input-container {
     flex-direction: column;
   }
-  #numberOfEvents{
+  .recharts-legend-wrapper{
+    min-height: 70px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+  #event-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .recharts-responsive-container {
+    margin: 10px;
+  }
+
+  #input-container {
+    flex-direction: column;
+  }
+
+  #numberOfEvents {
     display: flex;
     flex-direction: column;
   }
-  h5{
-    margin-bottom: 0;
 
+  h5 {
+    margin-bottom: 0;
   }
 }
