@@ -15,6 +15,7 @@ export const NumberOfEvents = ({setCurrentNOE , setErrorAlert}) => {
         } else {
           errorText = '';
           setCurrentNOE(value)
+
         }
         setErrorAlert(errorText)
     }

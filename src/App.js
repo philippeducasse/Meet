@@ -20,7 +20,7 @@ const App = () => {
 
   const fetchData = async () => {
     const allEvents = await getEvents();
-    const filteredEvents = currentCity == 'See all cities' ? // putting strict equality here makes the test fail
+    const filteredEvents = currentCity === 'See all cities' ? // putting strict equality here makes the test fail
       allEvents :
       allEvents.filter(event => event.location === currentCity);
     setEvents(filteredEvents.slice(0, currentNOE));
@@ -47,7 +47,6 @@ const App = () => {
         <div className='circle2'></div>
         <div className='circle3'></div>
         <div className='circle4'></div>
-
       </div>
       <div id="input-container">
         <h1>Meet App</h1>

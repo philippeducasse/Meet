@@ -30,6 +30,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert, currentNOE, se
         setShowSuggestions(false); //to hide the list once it is clicked
         setInfoAlert("");
         setCurrentNOE(currentNOE);
+        console.log(currentNOE)
     }
     // must use this hhook because the allLocation array is fetched asynchronously, can't just initialise the state to allLocations
     useEffect(() => {
