@@ -128,16 +128,16 @@ input[type="number"] {
   width: 250px;
 }
 
-
-
 .suggestions {
   width: 250px;
+  background-color: #fff;
   position: absolute;
   top: 45px;
   align-self: center;
   margin: 0;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
+  z-index: 9999;
 }
 
 .suggestions>li {
