@@ -40,7 +40,7 @@
 .circle2{
   right: 50px;
   top: 1050px;
-  background-color: #4bbe92;
+  background-color: #63bd9a;
   width: 65vw;
   height: 850px;
   border-radius: 50%;
@@ -60,7 +60,7 @@
 .circle4{
   left: 0;
   top: 2250px;
-  background-color: #5496c9;
+  background-color: #a1cbeb;
   width: 850px;
   height: 950px;
   border-radius: 50%;
@@ -230,6 +230,11 @@ input[type="number"] {
   grid-gap: 30px;
   margin: 5%;
   border-radius: 10px;
+  padding:10px
+}
+.recharts-legend-wrapper{
+  padding: 0.5%;
+  min-height: 50px;
 }
 @media (max-width: 500px) {
   #event-list {
@@ -241,9 +246,7 @@ input[type="number"] {
   #input-container {
     flex-direction: column;
   }
-  .recharts-legend-wrapper{
-    min-height: 70px;
-  }
+ 
 }
 
 @media (min-width: 501px) and (max-width: 768px) {

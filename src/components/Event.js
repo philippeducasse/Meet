@@ -14,7 +14,8 @@ const Event = ({ event }) => {
                     <div>
                         <h3 id="eventSummary">{event.summary}</h3>
                         <p className="eventStartTime">
-                            {startTime}
+                            {/* Format the startTime date to something more readable */}
+                            {new Date(startTime).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})}
                         </p>
                         <p>{event.location}</p>
                         <p className="eventTimeZone">
