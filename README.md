@@ -1,6 +1,6 @@
-# Meet App #
+# Meet App
 
-This app allows users to access different events by cities. Users will be able to filter through different cities and browse through the events happening there. Users will be able to click on specific events of interest from a list in order to show or hide the details of each event. 
+This app allows users to access different events by cities. Users will be able to filter through different cities and browse through the events happening there. Users will be able to click on specific events of interest from a list in order to show or hide the details of each event.
 
 This progressive web app (PWA) was built using react and hosted using AWS serverlesss functionality. It was built implementing a Test Driven Development (TDD) approach
 
@@ -8,29 +8,27 @@ Users will be authenticated & authorised using OAuth, in which Google acts as th
 
 <img src = "/Screenshot.png">
 
- <a>https://philippeducasse.github.io/meet/</a>
+<a>https://philippeducasse.github.io/meet/</a>
 
 ## Technologies used
 
--   React
+- React
 
--   SCSS
+- SCSS
 
--   JavaScript
+- JavaScript
 
--   Google Calendar API and OAuth2 authentication
+- Google Calendar API and OAuth2 authentication
 
--   Jest testing
+- Jest testing
 
--   Lighthouse (PWA checklist providede by Google)
+- AWS Lamba functions
 
--   AWS Lamba functions
+- React Testing Library
 
--   React Testing Library
+- Jest (test runner)
 
--   Jest (test runner)
-
--   Recharts (react library for data visualisation)
+- Recharts (react library for data visualisation)
 
 ## How to run the app##
 
@@ -42,13 +40,13 @@ To deploy the app, run
 
 npm run deploy
 
-## Serverless fucntionality ##
+## Serverless fucntionality
 
-This application uses serverless functionality by accessing a google calendar hosted by CareerFoundry. When a user selects a specific city, this will trigger a serverless function which will fetch data from a cloud server and return it in JSON format. 
+This application uses serverless functionality by accessing a google calendar hosted by CareerFoundry. When a user selects a specific city, this will trigger a serverless function which will fetch data from a cloud server and return it in JSON format.
 
 ## Feature 1: Filter Events by City
 
-** User story ** 
+** User story **
 
 As a user I should be able to filter events by city So that I can see the list of events that take place in that city
 
